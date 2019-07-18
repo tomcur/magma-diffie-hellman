@@ -1,5 +1,8 @@
 load 'math.m';
 
+// declare type EcdhSecKey;
+// declare attributes EcdhSecKey: Numer, Denom;
+
 // Given public primes P, G, and a partial secret `a` s.t. its shared secret is
 // `xa = G^a mod P`, and a shared secret `xb = G^b mod P` (with `b` unknown),
 // calculate the symmetric secret key `k = xb^a mod P`.

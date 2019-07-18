@@ -1,7 +1,12 @@
+Attach("elliptic_curve.m");
+
 load 'math.m';
-load 'elliptic_curve.m';
 load 'diffie_hellman.m';
-P := 23;
-G := 43;
 
-
+// Some checks:
+procedure curve_25519_check()
+    crv := Curve25519();
+    assert ValidateParameters(crv);
+    assert ValidateSecurity(crv);
+    print("Curve validated.");
+end procedure;
