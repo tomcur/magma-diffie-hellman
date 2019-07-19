@@ -1,6 +1,16 @@
 declare type CryptoCrvEll;
 declare attributes CryptoCrvEll: Curve, Generator, Order, Cofactor;
 
+intrinsic Print(crv::CryptoCrvEll)
+{Print crv}
+    printf
+        "Crypto-elliptic curve with %o and generator %o generating a subgroup of order %o with cofactor %o",
+        crv`Curve,
+        crv`Generator,
+        crv`Order,
+        crv`Cofactor;
+end intrinsic;
+
 intrinsic CryptoEllipticCurve(
     coef::[FldElt],
     G::FldElt,
