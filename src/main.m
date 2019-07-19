@@ -1,4 +1,4 @@
-Attach("elliptic_curve.m");
+AttachSpec("spec");
 
 load 'math.m';
 load 'diffie_hellman.m';
