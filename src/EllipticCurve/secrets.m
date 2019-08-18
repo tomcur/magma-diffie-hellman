@@ -1,3 +1,8 @@
+////////////////////////////////////////////////////////////////////////////////
+// A specialized implementation of the Diffie-Hellman protocol over elliptic  //
+// curves. See ../DiffieHellman for a generalized implementation.             //
+////////////////////////////////////////////////////////////////////////////////
+
 declare type SetParSecCryptoCrvEll[ParSecCryptoCrvEll];
 declare attributes SetParSecCryptoCrvEll: Curve;
 declare attributes ParSecCryptoCrvEll: Secret, Parent;

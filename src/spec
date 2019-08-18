@@ -1,5 +1,13 @@
 {
+  ModularExponential
+  {
+    +spec
+  }
   EllipticCurve
+  {
+    +spec
+  }
+  DiffieHellman
   {
     +spec
   }
