@@ -1,5 +1,4 @@
 {
   lib.m
   parameters.m
-  secrets.m
 }

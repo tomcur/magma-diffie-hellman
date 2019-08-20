@@ -45,7 +45,7 @@ intrinsic Print(parameters::ParametersDH)
         parameters`FiniteCyclicGroup;
 end intrinsic;
 
-intrinsic DiffieHellman(finite_cyclic_group::FinCycGrp) -> ParametersDH
+intrinsic DiffieHellmanProtocol(finite_cyclic_group::FinCycGrp) -> ParametersDH
 {Create a Diffie-Hellman protocol with the given parameters.
  `cyclic_group` must be the group the Diffie-Hellman protocol is performed on.
 }
