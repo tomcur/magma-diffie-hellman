@@ -1,6 +1,7 @@
 AttachSpec("spec");
 
 load 'math.m';
+load 'test.m';
 
 // Some checks:
 procedure curve_25519_check()
@@ -25,7 +26,7 @@ function diffie_hellman_key_exchange(finite_cyclic_group)
         "Alice calculated shared secret:",
         shared_alice;
     print
-        "Bob calculated shared secret:",
+        "Bob calculated shared secret:  ",
         shared_alice;
 
     return (shared_alice`Point`Value eq shared_bob`Point`Value);
