@@ -62,6 +62,11 @@ intrinsic O(crv::MyCrvEll) -> MyPtEll
     return res;
 end intrinsic;
 
+intrinsic Zero(crv::MyCrvEll) -> MyPtEll
+{Return the neutral point for the curve (zero/infinity).}
+    return O(crv);
+end intrinsic;
+
 intrinsic '+'(p::MyPtEll, q::MyPtEll) -> MyPtEll
 {Calculate p+q.}
     if p`Z eq 0 then
@@ -98,6 +103,11 @@ intrinsic '+'(p::MyPtEll, q::MyPtEll) -> MyPtEll
         return res;
     end if;
 
+end intrinsic;
+
+intrinsic '*'(p::MyPtEll, n::RngIntElt) -> MyPtEll
+{Calculate n*p.}
+    return FastMultiply(p, n);
 end intrinsic;
 
 intrinsic '-'(p::MyPtEll) -> MyPtEll

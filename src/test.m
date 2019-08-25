@@ -38,5 +38,8 @@ procedure test_my_elliptic_curve()
         assert_equal("O", my_o, their_o);
         assert_equal("+O", my_p + my_o, their_p + their_o);
         assert_equal("-O", my_p - my_o, their_p - their_o);
+
+        n := IntegerRing()!Random(F);
+        assert_equal("*n", my_p * n, their_p * n);
     end for;
 end procedure;

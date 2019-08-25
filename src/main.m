@@ -1,6 +1,5 @@
 AttachSpec("spec");
 
-load 'math.m';
 load 'test.m';
 
 // Some checks:
