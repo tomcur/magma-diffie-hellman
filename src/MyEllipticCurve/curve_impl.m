@@ -129,3 +129,8 @@ intrinsic 'eq'(p1::MyPtEll, p2::PtEll) -> BoolElt
 {Check for equality between p1 and p2.}
     return p1`X eq p2[1] and p1`Y eq p2[2] and p1`Z eq p2[3];
 end intrinsic;
+
+intrinsic 'eq'(p1::MyPtEll, p2::MyPtEll) -> BoolElt
+{Check for equality between p1 and p2.}
+    return p1`X eq p2`X and p1`Y eq p2`Y and p1`Z eq p2`Z;
+end intrinsic;
