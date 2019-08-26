@@ -16,6 +16,8 @@ Elliptic curve cyclic subgroups are provided using both Magma's implementation a
 | `./MyEllipticCurve/curve_impl.m` | A custom implementation of elliptic curves. It supports curves of form `y^2 = x^3 + a_1 x + a_2`. |
 | `./MyEllipticCurve/lib.m` | An implementation of cryptographic elliptic curves using a custom implementation of curves. It explicitly implements such curves as cyclic groups. |
 | `./MyEllipticCurve/parameters.m` | An example curve (P-192). |
+| `./main.m` | An example implementation of Diffie-Hellman key exchange using the provided functionality. |
+| `./test.m` | Various tests and a benchmark. |
 
 ## Parameter sources
 

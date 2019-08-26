@@ -1,7 +1,5 @@
 AttachSpec("spec");
 
-load 'test.m';
-
 function diffie_hellman_key_exchange(finite_cyclic_group, do_print)
     dh := DiffieHellmanProtocol(finite_cyclic_group);
 
@@ -15,12 +13,26 @@ function diffie_hellman_key_exchange(finite_cyclic_group, do_print)
 
     if do_print then
         print
-            "Alice calculated shared secret:",
+            "Alice:",
+            secret_alice;
+        print
+            "Bob:  ",
+            secret_bob;
+        print
+            "Alice:",
+            public_alice;
+        print
+            "Bob:  ",
+            public_bob;
+        print
+            "Alice:",
             shared_alice;
         print
-            "Bob calculated shared secret:  ",
-            shared_alice;
+            "Bob:  ",
+            shared_bob;
     end if;
 
-    return (shared_alice`Point`Value eq shared_bob`Point`Value);
+    return (shared_alice`Point`Value eq shared_bob`Point`Value), shared_alice`Point`Value;
 end function;
+
+load 'test.m';
