@@ -5,17 +5,17 @@
 
 // The type of finite cyclic groups.
 //
-// Types implementing `CycGrp` must provide implementations for the
-// intrinsic `GeneratingElement` that returns a `CycGrpElt` generating `CycGrp`
-// and the intrinsic `Order` that returns the (`RngIntElt`) order of the finite
-// cyclic group.
+// Types implementing `FinCycGrp` must provide implementations for the
+// intrinsic `GeneratingElement` that returns a `FinCycGrpElt` generating
+// `FinCycGrp`, and the intrinsic `Order` that returns the (`RngIntElt`) order
+// of the finite cyclic group.
 //
-// Types implementing CycGrpElt must provide an implementation for the
+// Types implementing FinCycGrpElt must provide an implementation for the
 // intrinsic '^', which is the binary operation on the finite cyclic group.
 declare type FinCycGrp[FinCycGrpElt];
 declare attributes FinCycGrpElt: Value, Parent;
 
-intrinsic Print(finite_cyclic_group::CycGrp)
+intrinsic Print(finite_cyclic_group::FinCycGrp)
 {Print the cyclic group.}
     printf
         "A finite cyclic group of order %o with generator %o",
