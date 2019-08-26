@@ -18,6 +18,13 @@ Elliptic curve cyclic subgroups are provided using both Magma's implementation a
 | `./MyEllipticCurve/parameters.m` | An example curve (P-192). |
 
 ## Parameter sources
+
 * The 2048-bit MODP group is taken from [RFC 3526 Section 3](https://tools.ietf.org/html/rfc3526#section-3);
 * The cryptographic elliptic curve P-192 is taken from [FIPS 186-4 D.1.2](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf); and
 * The cryptographic elliptic curve Curve25519 is taken from [Daniel J. Bernstein's Curve25519: new Diffie-Hellman speed records](https://cr.yp.to/ecdh/curve25519-20060209.pdf).
+
+## Limitations
+
+This Diffie-Hellman implementation does not have a final key-derivation step and the resulting shared secret is simply an element of the chosen finite cyclic group.
+Further, this Diffie-Hellman implementation does not check for validity of public keys.
+From the finite cyclic groups provided, elliptic curves are vulnerable to invalid public keys, as in general the subgroup generated can have lower order than the group of points on the curve itself.
