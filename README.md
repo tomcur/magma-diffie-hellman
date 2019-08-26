@@ -29,7 +29,7 @@ Elliptic curve cyclic subgroups are provided using both Magma's implementation a
 
 * This Diffie-Hellman implementation does not have a final key-derivation step and the resulting shared secret is simply an element of the chosen finite cyclic group.
 * This Diffie-Hellman implementation does not check for validity of public keys.
-From the finite cyclic groups provided, elliptic curves are vulnerable to invalid public keys, as in general the subgroup generated can have lower order than the group of points on the curve itself.
+From the finite cyclic groups provided, elliptic curves are especially vulnerable to invalid public keys, as in general the subgroup generated can have lower order than the group of points on the curve itself.
 * In general it might be necessary to take special care when generating secret keys.
 This is the case for e.g. Curve25519, where the set of secret keys is smaller than the subgroup order to prevent some timing attacks and other leaks.
 This implementation does not account for that.
