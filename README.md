@@ -1,4 +1,4 @@
-# Finite cyclic group Diffie-Hellman
+# Diffie-Hellman on finite cyclic groups
 This program implements Diffie-Hellman on finite cyclic groups in Magma, a computer algebra programming language.
 Two implementations of such groups are provided: modular exponential groups and subgroups of elliptic curves.
 Elliptic curve cyclic subgroups are provided using both Magma's implementation as well as a (naive) custom implementation.
