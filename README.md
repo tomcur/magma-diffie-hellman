@@ -13,7 +13,7 @@ Elliptic curve cyclic subgroups are provided using both Magma's implementation a
 | `./EllipticCurve/secrets.m` | A specialized implementation of the Diffie-Hellman protocol using only elliptic curves. It's no longer necessary, given `./DiffieHellman/lib.m` is more generic, but is kept for example purposes. |
 | `./ModularExponential/lib.m` | An implementation of modular exponential groups. It explicitly implements such groups as cyclic groups, and provide a security utility for parameter validation. |
 | `./ModularExponential/parameters.m` | Some example modular exponential groups (a 64-bit MODP group and a real-world 2048-bit MODP group). |
-    | `./MyEllipticCurve/curve_impl.m` | A custom implementation of elliptic curves. It supports curves of the form `y^2 = x^3 + a_4 x + a_6`. |
+| `./MyEllipticCurve/curve_impl.m` | A custom implementation of elliptic curves. It supports curves of the form `y^2 = x^3 + a_4 x + a_6`. |
 | `./MyEllipticCurve/lib.m` | An implementation of cryptographic elliptic curves using a custom implementation of curves. It explicitly implements such curves as cyclic groups. |
 | `./MyEllipticCurve/parameters.m` | An example curve (P-192). |
 | `./main.m` | An example of a full Diffie-Hellman key exchange on a finite cyclic group. |
