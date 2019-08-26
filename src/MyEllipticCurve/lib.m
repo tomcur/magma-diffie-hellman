@@ -52,6 +52,8 @@ end intrinsic;
 
 intrinsic '^'(e::CryptoMyPtEll, n::RngIntElt) -> CryptoMyPtEll
 {Return e^n.}
-    e`Value := e`Value * n;
-    return e;
+    elt := New(CryptoMyPtEll);
+    elt`Value := e`Value * n;
+    elt`Parent := e`Parent;
+    return elt;
 end intrinsic;

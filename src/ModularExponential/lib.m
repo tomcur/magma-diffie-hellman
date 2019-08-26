@@ -45,6 +45,8 @@ end intrinsic;
 
 intrinsic '^'(e::CryptoModpElt, n::RngIntElt) -> CryptoModpElt
 {Return e^n.}
-    e`Value := e`Value ^ n;
-    return e;
+    elt := New(CryptoModpElt);
+    elt`Value := e`Value ^ n;
+    elt`Parent := e`Parent;
+    return elt;
 end intrinsic;

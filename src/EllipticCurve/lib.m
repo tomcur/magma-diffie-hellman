@@ -81,6 +81,8 @@ end intrinsic;
 
 intrinsic '^'(e::CryptoPtEll, n::RngIntElt) -> CryptoPtEll
 {Return e^n.}
-    e`Value := e`Value * n;
-    return e;
+    elt := New(CryptoPtEll);
+    elt`Value := e`Value * n;
+    elt`Parent := e`Parent;
+    return elt;
 end intrinsic;
