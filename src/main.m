@@ -2,15 +2,7 @@ AttachSpec("spec");
 
 load 'test.m';
 
-// Some checks:
-procedure curve_25519_check()
-    crv := Curve25519();
-    assert ValidateParameters(crv);
-    assert ValidateSecurity(crv);
-    print("Curve validated.");
-end procedure;
-
-function diffie_hellman_key_exchange(finite_cyclic_group)
+function diffie_hellman_key_exchange(finite_cyclic_group, do_print)
     dh := DiffieHellmanProtocol(finite_cyclic_group);
 
     secrets := SetPartialSecrets(dh);
@@ -21,12 +13,14 @@ function diffie_hellman_key_exchange(finite_cyclic_group)
     shared_alice := DiffieHellman(secret_alice, public_bob);
     shared_bob := DiffieHellman(secret_bob, public_alice);
 
-    print
-        "Alice calculated shared secret:",
-        shared_alice;
-    print
-        "Bob calculated shared secret:  ",
-        shared_alice;
+    if do_print then
+        print
+            "Alice calculated shared secret:",
+            shared_alice;
+        print
+            "Bob calculated shared secret:  ",
+            shared_alice;
+    end if;
 
     return (shared_alice`Point`Value eq shared_bob`Point`Value);
 end function;

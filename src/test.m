@@ -1,18 +1,34 @@
+procedure curve_25519_check()
+    crv := Curve25519();
+    assert ValidateParameters(crv);
+    assert ValidateSecurity(crv);
+    print("Curve validated.");
+end procedure;
+
+procedure curve_p192_check()
+    crv := CurveP192();
+    assert ValidateParameters(crv);
+    assert ValidateSecurity(crv);
+    print("Curve validated.");
+end procedure;
+
 procedure assert_equal(msg, e1, e2)
     if e1 ne e2 then
         error msg, Sprintf("LHS: %o", e1), Sprintf("RHS: %o", e2);
     end if;
 end procedure;
 
+// Test whether calculations on MyEllipticCurve agree with calculations on
+// the Magma-provided EllipticCurve.
 procedure test_my_elliptic_curve()
-    F := FiniteField(5437);
+    F := FiniteField(343373);
 
     a := F!3333;
     b := F!260;
     my_crv := MyEllipticCurve(a, b);
     their_crv := EllipticCurve([a, b]);
 
-    for epoch := 1 to 500 do
+    for epoch := 1 to 5000 do
         x := Random(F);
         my_has_p, my_p := Point(my_crv, x);
         their_ps := Points(their_crv, x);
@@ -42,4 +58,23 @@ procedure test_my_elliptic_curve()
         n := IntegerRing()!Random(F);
         assert_equal("*n", my_p * n, their_p * n);
     end for;
+end procedure;
+
+procedure benchmark_dh_curves()
+    my_crv := MyCurveP192();
+    their_crv := CurveP192();
+
+    t := Cputime();
+    SetSeed(42);
+    for epoch := 1 to 150 do
+        r := diffie_hellman_key_exchange(my_crv, false);
+    end for;
+    Cputime(t);
+
+    t := Cputime();
+    SetSeed(42);
+    for epoch := 1 to 150 do
+        r := diffie_hellman_key_exchange(their_crv, false);
+    end for;
+    Cputime(t);
 end procedure;
